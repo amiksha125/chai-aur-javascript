@@ -43,4 +43,34 @@ console.log(typeof heroes); //object
 
 //explore typeof for all the primitives , its written in notebook
 
+console.log("Memory =====>>")
+//+++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+//Stack(Primitives) and Heap(Non Primitives)
+
+//Stack returns a copy and heap returns reference to object so that we can chnage the original one
+
+let myName = "taksha";
+let anotherName = myName;
+
+console.log(anotherName);
+
+anotherName = "amiksha";
+console.log(myName);
+console.log(anotherName);
+
+//heap
+let userOne = {
+    email: "user@gmail.com",
+    upi: "user@ybl"
+}
+
+let usertwo = userOne;
+usertwo.email = "amiksha@gmail.com";
+
+console.log(usertwo.email);
+console.log(userOne.email);
+
+
+
+
 
