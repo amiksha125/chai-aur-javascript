@@ -63,6 +63,24 @@ console.log(tinderUser.hasOwnProperty('age'));
 
 //explore more using prototype methods after logging obj at browser console
 
+console.log("Object Destructering and JSON");
+
+//Destructuring object
+const course = {
+    coursename: "Data Structures",
+    price: "999",
+    duration: "2 Months"
+}
+// course.price this is okay but for a cleaner looking code , its not optimal to access like this again and again
+
+const { price } = course;
+console.log(price);
+
+const {coursename : name, duration: months} = course;
+// console.log(coursename , duration);
+console.log(name, months);
+
+
 
 
 
