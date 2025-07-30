@@ -53,7 +53,43 @@ console.log(loginUserHandledErr());
 console.log(loginUserDefaultName()); // default value is set, name will never be undefined
 console.log(loginUserDefaultName("Veena")); //override default value
 
+//rest operator
+function calculateCartPrice(...num1){
+    return num1;
+}
 
+//consume some values 
+function calculateCartPriceRemaining(val1, val2, ...num){
+    return num;
+}
 
+console.log(calculateCartPrice(200, 400, 500, 1000));
+console.log(calculateCartPriceRemaining(200, 400, 500, 1000));
 
+//passing object to function
+const user = {
+    username: "amiksha",
+    price: 200
+}
 
+function handleObject(anyObject){
+    console.log(`username is ${anyObject.username} and price is ${anyObject.price}`);
+    
+}
+
+handleObject(user);
+handleObject({
+    username: "Ruhi",
+    price: 100
+})
+
+//passing array to function
+const myNewArray = [200, 400, 100, 600]
+
+function returnSecondValue(getarray){
+  return getarray[1];
+}
+
+console.log(returnSecondValue(myNewArray));
+
+console.log(returnSecondValue([23, 55, 67, 8]));
