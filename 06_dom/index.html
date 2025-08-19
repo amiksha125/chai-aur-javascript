@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DOM Learning</title>
+</head>
+<body style="background-color: #212121; color: #fff;">
+    <div class="bg-black">
+        <div class="parent">
+            <div class="day">Monday</div>
+            <div class="day">Tuesday</div>
+            <div class="day">Wednesday</div>
+            <div class="day">Thursday</div>
+            <div class="day">Friday</div>
+            <div class="day">Saturday</div>
+            <div class="day">Sunday</div>
+        </div>
+
+        
+    </div>
+</body>
+
+<script>
+    const parent = document.querySelector('.parent')
+    console.log(parent);
+    console.log(parent.children[1].innerHTML); //Tuesday
+    console.log("Accessing all the children ");
+
+    for (let index = 0; index < parent.children.length; index++) {
+       console.log(parent.children[index].innerHTML);
+       
+    }
+    
+    parent.children[3].style.color = 'Orange'
+    //firstElementChild property
+    console.log(parent.firstElementChild); // monday div code
+    //lastElementChild property
+     console.log(parent.lastElementChild);// sunday div code
+
+     //we can move from child to parent
+
+     const dayOne = document.querySelector('.day'); // always returns the first child
+     console.log(dayOne.parentElement);
+
+     //we can get monday's sibling
+     console.log(dayOne.nextElementSibling); //tuesday div
+     
+     console.log("Nodes: ", parent.childNodes);
+     
+     
+
+</script>
+</html>
