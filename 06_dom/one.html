@@ -4,12 +4,33 @@
     <meta charset="UTF-8">
     <title>DOM Learning</title>
 </head>
-<body>
-    <div class="bg-black">
-        <h1 class="heading">DOM learning</h1>
-        <p>Lorem ipsum dolor sit amet.</p>
-
-        
-    </div>
+<body style="background-color: #212121; color: #fff;">
+    
 </body>
+
+<script>
+    //creating elements
+
+    const myDiv = document.createElement('div')
+    console.log(myDiv);
+    myDiv.className = "main"
+    myDiv.id = Math.round(Math.random() * 10 + 1)
+    //setAttribute function
+    myDiv.setAttribute("title", "generated title")
+    myDiv.style.backgroundColor = "blue"
+    myDiv.style.padding = "15px"
+    //myDiv.innerHTML = "Amiksha Learning JS with Chai aur Code"
+    //myDiv is not yet displayed on html page it is just created in memory
+    //myDiv.innerHTML this will bring the original property then change it, this is expensive setAttribute does it in one round
+
+    const addText = document.createTextNode("Amiksha Learning JS with Chai aur Code");
+    myDiv.appendChild(addText)
+    
+    //just like we attack this textNode into div
+    //Similarly we need to attach or append child to document.body
+
+    document.body.appendChild(myDiv);
+
+
+</script>
 </html>
