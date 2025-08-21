@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body style = "background-color: #212121; color: #fff">
+    
+    <ul class="language">
+       <li>Javascript</li>
+    </ul>
+</body>
+
+<script>
+
+    const list = document.getElementsByClassName('language')[0]
+    function addLanguage(langName){
+        const listItem = document.createElement('li');
+        listItem.innerHTML = langName
+        // list.appendChild(listItem);
+        document.querySelector(".language").appendChild(listItem);
+    }
+
+    addLanguage("Java");
+    addLanguage("Python");
+    
+
+    //more optimized function
+    function addOptiLanguage(langName){
+        const listItem = document.createElement('li');
+        listItem.appendChild(document.createTextNode(langName))
+        document.querySelector(".language").appendChild(listItem);
+    }
+    addOptiLanguage('Typescript')
+    addOptiLanguage('golang')
+
+    //Edit element
+    const secondLang = document.querySelector("li:nth-child(2)"); //select the element first
+    secondLang.innerHTML = "C++" // not so optimized
+    //below is prefered
+    const newli = document.createElement('li')
+    newli.textContent = "Mojo";
+    secondLang.replaceWith(newli);
+
+    //convert js to ts
+
+    const firstlang = document.querySelector("li:first-child");
+    firstlang.outerHTML = '<li>TypeScript</li>'
+
+
+    //Remove element
+    const lastLang = document.querySelector("li:last-child");
+    lastLang.remove() //golang removed
+
+</script>
+</html>
