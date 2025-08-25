@@ -1,0 +1,68 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Libre+Baskerville:wght@700&family=Miniver&family=Nunito:ital,wght@0,200..1000;1,200..1000&family=Outfit:wght@100..900&family=Prata&family=Varela+Round&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Nunito', sans-serif;
+}
+nav{
+    background: rgba(128, 128, 128, 0.582);
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 40px;
+}
+
+nav a{
+    outline: none;
+    text-decoration: none;
+    color: black;
+    text-align: center;
+    border: 2px solid black;
+    border-radius: 5px;
+    font-size: 25px;
+    padding: 6px 10px;
+}
+
+h1{
+    text-align: center;
+}
+
+.canvas{
+    
+}
+
+.button{
+  display: inline-block;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  height: 200px;
+  width: 200px;
+  border: 3px solid black;
+  margin-left: 120px;
+  margin-top: 60px;
+}
+
+#grey{
+    background-color: gray;
+}
+
+#green{
+    background-color: green;
+}
+
+#blue{
+    background-color: blue;
+}
+
+#yellow{
+    background-color: yellow;
+}
+
+h2{
+    text-align: center;
+    margin-top: 70px;
+}
