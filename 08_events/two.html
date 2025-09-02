@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <h1>Javascript Asyncronization</h1>
+    <button id="stop">Stop</button>  
+</body>
+
+<script>
+    setTimeout(function(){
+        console.log("Amiksha")
+    }, 2000);
+
+    const greetings = () => {
+        let num = prompt("Enter a number");
+        console.log(`you entered ${num}`);
+    }
+
+    setTimeout(greetings, 3000);
+
+    //change h1 
+   const changeText = function(){
+     document.querySelector('h1').innerHTML = 'Never loose hope, You still have opportunities'
+   }
+
+   const changeMe = setTimeout(changeText, 5000)
+   //clearTimeout(changeMe) // callback is not executed of this setTimeout func
+
+   document.getElementById('stop').addEventListener('click', function(e){
+     clearTimeout(changeMe)
+     console.log("STOPPED")
+   })  //STOP THE SETTIMEOUT EVENT WHEN STOP BUTTON IS CLICKED CLICK ON STOP BTN FIRST
+</script>
+   
+</html>

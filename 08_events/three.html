@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Async</title>
+</head>
+<body>
+    <h1>Javascript Asyncronization</h1>
+    <button id="start">Start</button>  
+    <button id="stop">Stop</button>  
+</body>
+
+<script>
+
+    // setInterval(function(){
+    //     console.log("Hello", Date.now());
+    // }, 2000)
+    
+   const sayDate = function(str){
+    console.log(str, Date.now());
+   }
+
+   let intervalId;
+   document.getElementById('start').addEventListener('click', function(e){
+     intervalId = setInterval( sayDate, 1000, "Hello dear");
+   })
+
+   document.getElementById('stop').addEventListener('click', function(e){
+    clearInterval(intervalId);
+    console.log("Stopped");
+   })
+</script>
+   
+</html>
