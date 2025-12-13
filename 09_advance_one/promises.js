@@ -34,7 +34,7 @@ promiseThree.then(function(user) {
 
 const promisefour = new Promise(function(resolve, reject){
     setTimeout(function(){
-        let error = false;
+        let error = true;
         //if true then catch() will consume promise
         if(!error){
             resolve({username: "anshuja", email: "anshubham@gmail.com"});
@@ -54,6 +54,60 @@ const username = promisefour.then((obj) => {
 }).then((username) =>{
     console.log(username); 
 }).catch(function(error){
-    console.log(error);
-    
+    console.log(error);  
+}).finally(() => console.log("Promise is either resolved or rejected.")
+);
+
+
+const promisefive = new Promise(function(resolve, reject){
+    setTimeout(function(){
+        let error = true;
+        //if true then catch() will consume promise
+        if(!error){
+            resolve({username: "amiksha", passcode: "232"});
+        } else {
+            reject('Error, JS went wrong!') //value passed to .catch(callback)
+        }
+    }, 1000)
 })
+
+async function consumePromise() {
+    try {
+        const response = await promisefive;
+    // throws error and stops when erroe is true unlinke .then
+    // better to wrap in try-catch
+    console.log(response);
+    } catch (error) {
+        console.log(error);
+        
+    }
+}
+console.log("Promise 5 Now: async await"); // look where it is printed in op
+consumePromise();
+
+
+// json data for posts - https://jsonplaceholder.typicode.com/users
+// try to fetch 👇
+
+async function getAllUsers() {
+    const response = await fetch('https://jsonplaceholder.typicode.com/users')
+    // the response came now is a string raw data convert t to json with json() for readability
+    // ⚠️json() will take time add await before it
+    const data = await response.json();
+    console.log(data);
+    
+}
+
+getAllUsers();
+
+// do same with .then .catch
+
+fetch('https://jsonplaceholder.typicode.com/users')
+.then((response) => {
+    return response.json()
+})
+.then((data) => {
+  console.log(data);
+  
+})
+.catch((error)=> console.log(error))
