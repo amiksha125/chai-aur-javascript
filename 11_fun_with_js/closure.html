@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="orange" style="background-color: orange;">Orange</button>
+    <button id="green" style="background-color: green;">Green</button>
+</body>
+
+ <script>
+    function makeFunc() {
+        const name = "Mozilla";
+        function displayName() {
+              console.log(name);
+        }
+       return displayName; // the reference of the inner function is returned
+    }
+ // here after executing makeFunc , its scope and its inner func scope are gone now
+ // how will inner func be called?
+ // here comes closure, although the scope has been popped from the stack, but memory is there
+ // when we return the reference of inner function not only the inner function scope but outer func
+//  scope is also returned
+// the entire lexical scope is returned
+const myFunc = makeFunc();
+myFunc();
+ </script>
+
+ <script>
+    // change the background color of screen clicking on the button
+    // document.getElementById("orange").onclick = function () {
+    //     document.body.style.backgroundColor = "orange";
+    // };
+
+    // document.getElementById("green").onclick = function () {
+    //     document.body.style.backgroundColor = "green";
+    // };
+
+    //With closure:
+
+    function clickHandler(color) {
+        return function () {
+            document.body.style.backgroundColor = color;
+        };
+    }
+
+    document.getElementById("orange").onclick = clickHandler("orange");
+    document.getElementById("green").onclick = clickHandler("green");
+</script>
+</html>
